@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Js_Task-8</title>
+    <style>
+      #image {
+        margin-top: 100px;
+        animation: anim1 5s infinite;
+        animation-play-state: paused;
+      }
+
+      @keyframes anim1 {
+        0% {
+          transform: translateX(0%);
+        }
+
+        50% {
+          transform: translateX(200%);
+        }
+
+        100% {
+          transform: translateX(0%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <img src="./image.png" id="image" alt="" />
+    </div>
+    <div style="text-align: center">
+      <h1>Click the following buttons to handle animation</h1>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+
+    <script>
+      var startBtn = document.getElementById("start");
+      var stopBtn = document.getElementById("stop");
+      var image = document.getElementById("image");
+      var paused = true;
+
+      startBtn.addEventListener("click", function () {
+        if (paused) {
+          image.style.animationPlayState = "running";
+          paused = false;
+        }
+      });
+
+      stopBtn.addEventListener("click", function () {
+        if (!paused) {
+          image.style.animationPlayState = "paused";
+          paused = true;
+        }
+      });
+    </script>
+  </body>
+</html>
+<!--Coded by Sourav-->
